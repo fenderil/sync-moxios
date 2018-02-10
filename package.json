@@ -1,0 +1,59 @@
+{
+  "name": "sync-moxios",
+  "version": "0.0.1",
+  "description": "Mocking axios requests for testing and presentations",
+  "main": "dist/sync-axios.js",
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start karma.config.js --browsers ChromeHeadless --single-run",
+    "build": "webpack && MINIFY=1 webpack",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist/",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "Ilya Tupitckiy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenderil/sync-moxios.git"
+  },
+  "homepage": "https://github.com/fenderil/sync-moxios#readme",
+  "bugs": {
+    "url": "https://github.com/fenderil/sync-moxios/issues"
+  },
+  "files": [
+    "dist/",
+    "index.js",
+    "README.md"
+  ],
+  "keywords": [
+    "axios",
+    "test",
+    "testing",
+    "mock",
+    "mocking",
+    "sync",
+    "moxios"
+  ],
+  "peerDependencies": {
+    "axios": ">=0.13.0"
+  },
+  "devDependencies": {
+    "axios": "^0.13.0",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "jasmine": "^3.0.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-cli": "^1.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-diff-reporter": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "webpack": "^1.13.1"
+  }
+}
